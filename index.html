@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4GAMER - الرئيسية</title>
+<style>
+    /* خلفية داكنة مع إضاءة RGB */
+    body {
+        font-family: 'Tahoma', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        color: #fff;
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+    }
+    /* طبقة إضاءة متحركة */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff0000);
+        background-size: 1000% 1000%;
+        animation: bgAnimation 20s ease infinite;
+        opacity: 0.15;
+        z-index: -1;
+    }
+    @keyframes bgAnimation {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    /* حاوية المحتوى */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* الرأس */
+    .header {
+        text-align: center;
+        padding: 20px 0;
+        animation: slideDown 1s ease;
+    }
+    @keyframes slideDown {
+        from {transform: translateY(-50px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+    .logo {
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+    .logo .four {
+        background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff0000);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rgbText 5s linear infinite;
+        background-size: 400%;
+    }
+    @keyframes rgbText {
+        0% {background-position: 0%;}
+        100% {background-position: 400%;}
+    }
+    .logo .gamer {
+        color: #fff;
+    }
+
+    /* زر تغيير اللغة */
+    .lang-toggle {
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        padding: 10px 20px;
+        background: rgba(255,255,255,0.05);
+        border: 2px solid #fff;
+        border-radius: 25px;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    .lang-toggle:hover {
+        background: rgba(255,255,255,0.15);
+        transform: scale(1.05);
+    }
+
+    /* أزرار الـ RGB */
+    .nav-buttons {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .nav-buttons .button {
+        display: inline-block;
+        padding: 15px 35px;
+        margin: 10px;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff0000);
+        background-size: 400%;
+        animation: rgbButton 5s linear infinite;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .nav-buttons .button:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    }
+    @keyframes rgbButton {
+        0% {background-position: 0%;}
+        100% {background-position: 400%;}
+    }
+
+    /* روابط القنوات */
+    .channel-links {
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    .channel-links h2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+    .channel-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    .channel-links ul li {
+        margin: 10px 0;
+    }
+    .channel-links ul li a {
+        color: #fff;
+        font-size: 1.2em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .channel-links ul li a:hover {
+        color: #ff0;
+    }
+
+    /* الفوتر */
+    footer {
+        margin-top: 40px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        font-size: 0.95em;
+    }
+
+    /* اللغة */
+    .lang-en { display: none; }
+</style>
+</head>
+<body>
+<button class="lang-toggle" onclick="toggleLanguage()">English</button>
+
+<div class="header">
+    <div class="logo">
+        <span class="four">4</span><span class="gamer">GAMER</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="nav-buttons">
+        <a href="rules_page.html" class="button lang-ar">قوانين المجموعة</a>
+        <a href="rules_page.html" class="button lang-en">Group Rules</a>
+
+        <a href="request_rules_page.html" class="button lang-ar">شروط الطلب</a>
+        <a href="request_rules_page.html" class="button lang-en">Request Rules</a>
+
+        <a href="dmca_policy_page.html" class="button lang-ar">سياسة DMCA</a>
+        <a href="dmca_policy_page.html" class="button lang-en">DMCA Policy</a>
+    </div>
+
+    <div class="channel-links">
+        <h2 class="lang-ar">روابط قنوات 4GAMER</h2>
+        <h2 class="lang-en">4GAMER Channel Links</h2>
+        <ul>
+            <li><a href="https://t.me/C9_9M" target="_blank"><span class="lang-ar">القناة الأساسية</span><span class="lang-en">Main Channel</span></a></li>
+            <li><a href="https://t.me/C9_9D" target="_blank"><span class="lang-ar">القناة الاحتياطية</span><span class="lang-en">Backup Channel</span></a></li>
+            <li><a href="https://t.me/G_4MER" target="_blank"><span class="lang-ar">قناة الثيمات والصور (PS4)</span><span class="lang-en">Themes and Avatars Channel (PS4)</span></a></li>
+            <li><a href="https://t.me/mediaspac" target="_blank"><span class="lang-ar">قناة أجهزة PS5</span><span class="lang-en">PS5 Devices Channel</span></a></li>
+            <li><a href="https://t.me/G3_PS" target="_blank"><span class="lang-ar">قناة أجهزة PS3</span><span class="lang-en">PS3 Devices Channel</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p class="lang-ar">&copy; 2025 جميع الحقوق محفوظة لـ 4GAMER.</p>
+    <p class="lang-en">&copy; 2025 All rights reserved for 4GAMER.</p>
+</footer>
+
+<script>
+function toggleLanguage() {
+    const html = document.documentElement;
+    const currentLang = html.lang;
+    const langToggleBtn = document.querySelector('.lang-toggle');
+
+    const elementsAr = document.querySelectorAll('.lang-ar');
+    const elementsEn = document.querySelectorAll('.lang-en');
+
+    if (currentLang === 'ar') {
+        html.lang = 'en';
+        html.dir = 'ltr';
+        langToggleBtn.textContent = 'العربية';
+        elementsAr.forEach(el => el.style.display = 'none');
+        elementsEn.forEach(el => el.style.display = el.tagName === 'A' ? 'inline-block' : 'block');
+    } else {
+        html.lang = 'ar';
+        html.dir = 'rtl';
+        langToggleBtn.textContent = 'English';
+        elementsAr.forEach(el => el.style.display = el.tagName === 'A' ? 'inline-block' : 'block');
+        elementsEn.forEach(el => el.style.display = 'none');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4GAMER - شروط الطلب</title>
+
+<style>
+  /* الخطوط العامة */
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+  /* انميشن دخول */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  body {
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a1f44 0%, #121d3a 100%);
+    color: #cfd9e8;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px 25px;
+    background: #142850cc; /* خلفية شفافة */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(10,31,68,0.7);
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .header {
+    background: transparent;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 3px solid #304ffe;
+    margin-bottom: 35px;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .logo .four {
+    color: #304ffe;
+    font-weight: 900;
+    font-size: 4.2rem;
+    letter-spacing: -2px;
+    text-shadow: 0 0 10px #304ffeaa;
+    display: inline-block;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+  }
+
+  .logo .gamer {
+    color: #e0e0ff;
+    font-weight: 900;
+    font-size: 4.2rem;
+    letter-spacing: 1px;
+    margin-left: 5px;
+    text-shadow: 0 0 10px #6f74ffcc;
+    display: inline-block;
+    animation: fadeInUp 1s ease 0.5s forwards;
+    opacity: 0;
+  }
+
+  /* زر تبديل اللغة */
+  .lang-toggle {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    background: #304ffe;
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 12px #304ffeaa;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+  }
+  .lang-toggle:hover {
+    background-color: #1e40ff;
+    box-shadow: 0 0 18px #1e40ffcc;
+  }
+
+  /* العناوين */
+  .page-title {
+    font-size: 2.8rem;
+    color: #82aaff;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: center;
+    text-shadow: 0 0 15px #82aaffcc;
+    animation: fadeInUp 1s ease 0.7s forwards;
+    opacity: 0;
+  }
+
+  h2, h3 {
+    color: #bbdefb;
+    border-bottom: 3px solid #304ffe;
+    padding-bottom: 12px;
+    margin-top: 40px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    animation: fadeInUp 1s ease forwards;
+  }
+  h3 {
+    font-size: 1.7rem;
+    margin-top: 30px;
+  }
+
+  p, li {
+    font-size: 1.15rem;
+    color: #cfd9e8;
+  }
+
+  /* القوائم مع الايقونات */
+  ul {
+    list-style: none;
+    padding-right: 0;
+  }
+  ul li {
+    margin-bottom: 15px;
+    padding-right: 30px;
+    position: relative;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  ul li.check::before {
+    content: "✔️";
+    color: #82c91e;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+  }
+  ul li.cross::before {
+    content: "❌";
+    color: #ff6b6b;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+  }
+  ul li.warning::before {
+    content: "⚠️";
+    color: #ffb703;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+  }
+  ul li.info::before {
+    content: "🔹";
+    color: #82aaff;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+  }
+  ul li.rocket::before {
+    content: "🚀";
+    position: absolute;
+    right: 0;
+    font-size: 1.3rem;
+  }
+
+  /* الملاحظة المهمة */
+  .important-note {
+    font-weight: 700;
+    color: #ff5252;
+    background: #33000055;
+    padding: 15px 20px;
+    border-right: 5px solid #ff5252;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 1.15rem;
+    text-shadow: 0 0 6px #ff5255aa;
+  }
+
+  /* رابط العودة */
+  .back-to-home {
+    text-align: center;
+    margin: 35px 0 20px;
+  }
+  .back-to-home a {
+    display: inline-block;
+    background: #304ffe;
+    color: #e0e0ff !important;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 20px #304ffeaa;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .back-to-home a:hover {
+    background-color: #1e40ff;
+    box-shadow: 0 0 30px #1e40ffcc;
+  }
+
+  /* الفوتر */
+  footer {
+    background: #0f1742;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #8e9fbe;
+    border-top: 1px solid #304ffe44;
+    user-select: none;
+  }
+
+  /* ضبط اتجاه اللغات */
+  .lang-en { display: none; }
+  .lang-ar { display: block; }
+
+  html[dir="rtl"] .lang-toggle {
+    left: auto;
+    right: 20px;
+  }
+  html[dir="ltr"] .lang-toggle {
+    right: auto;
+    left: 20px;
+  }
+  html[dir="rtl"] ul li {
+    padding-left: 0;
+    padding-right: 30px;
+  }
+  html[dir="rtl"] ul li::before {
+    right: 0;
+    left: auto;
+  }
+  html[dir="ltr"] ul li {
+    padding-right: 0;
+    padding-left: 30px;
+  }
+  html[dir="ltr"] ul li::before {
+    left: 0;
+    right: auto;
+  }
+</style>
+</head>
+<body>
+
+<button class="lang-toggle" onclick="toggleLanguage()">English</button>
+
+<header class="header">
+  <div class="logo">
+    <span class="four"></span><span class="gamer">4GAMER</span>
+  </div>
+</header>
+
+<main class="container">
+  <div class="back-to-home">
+    <a href="index.html" class="lang-ar">العودة إلى الرئيسية</a>
+    <a href="index.html" class="lang-en">Back to Home</a>
+  </div>
+
+  <div class="lang-ar">
+            <h1 class="page-title">📌 تعليمات وقوانين هامة – يرجى قراءتها قبل التعليق أو طلب الألعاب</h1>
+            <div class="content-section">
+                <p>نرحب بجميع الأعضاء في القناة والمجموعة، ونقدر مشاركاتكم وطلباتكم. لكن لضمان بيئة منظمة ومفيدة للجميع، يرجى الالتزام بالقواعد التالية عند التعليق أو طلب الألعاب.</p>
+                <hr>
+                <h3>📝 أولًا: قواعد التعليق على المنشورات</h3>
+                <ul>
+                    <li class="check"><strong>التعليق البنّاء فقط:</strong> سواء كان دعمًا أو نقدًا، يجب أن يكون بأسلوب محترم وهادف، بعيدًا عن التجريح أو الاستهزاء.</li>
+                    <li class="check"><strong>الالتزام بموضوع المنشور:</strong> أي تعليق خارج عن موضوع المنشور أو لا يخص القناة سيتم حذفه دون إشعار.</li>
+                    <li class="check"><strong>التنبيه على الأخطاء مقبول ومُرحَّب به:</strong> لكن بأسلوب لبق دون تقليل من مجهودات الآخرين.</li>
+                    <li class="check"><strong>عدم استخدام ألفاظ غير لائقة أو مثيرة للمشاكل:</strong> التعليقات المسيئة أو الهجومية قد تؤدي إلى حظر صاحبها.</li>
+                    <li class="check"><strong>لا تكرر الأسئلة أو الطلبات في التعليقات:</strong> إذا لم يتم الرد على سؤالك، انتظر أو استخدم البحث في القناة.</li>
+                    <li class="check"><strong>عدم مشاركة روابط خارجية أو إعلانات:</strong> أي تعليق يحتوي على روابط لمواقع أخرى سيتم حذفه مباشرة.</li>
+                </ul>
+                <hr>
+                <h3>🎮 ثانيًا: قواعد طلب الألعاب – اقرأها قبل أن تطلب</h3>
+                <p class="important-note warning"><strong>تنبيه هام:</strong> قبل أن تطلب أي لعبة، تأكد من أنها متوفرة وممكنة على جهاز PS4. الطلبات غير الممكنة سيتم تجاهلها تمامًا.</p>
+                <ul>
+                    <li class="cross"><strong>ممنوع طلب ألعاب PS3:</strong> لا توجد أي طريقة رسمية أو غير رسمية لتشغيل أو تحويل ألعاب PS3 على PS4.</li>
+                    <li class="cross"><strong>ممنوع طلب تحويل ألعاب PS2 إلى PS4:</strong> ليس كل الألعاب قابلة للتحويل، ونوفر فقط الألعاب التي تم تحويلها مسبقًا.</li>
+                    <li class="cross"><strong>ممنوع طلب ألعاب غير متوافقة مع PS4 المهكر:</strong> إذا لم يتم تعديل اللعبة لتعمل على PS4، فلن يكون بالإمكان توفيرها.</li>
+                    <li class="cross"><strong>ممنوع طلب ألعاب لم تصدر رسميًا على PS4:</strong> إذا لم تصدر اللعبة بصيغة PKG، فلن تجدها متاحة للتحميل.</li>
+                    <li class="cross"><strong>ممنوع طلب ألعاب جميع روابطها متوقفة:</strong> إذا لم يكن هناك رابط تحميل نشط متوفر، فلن نتمكن من رفع اللعبة مجددًا.</li>
+                </ul>
+                <hr>
+                <h3>🔹 ثالثًا: كيف تزيد فرص تلبية طلبك؟</h3>
+                <ul>
+                    <li class="check"><strong>اكتب اسم اللعبة بشكل دقيق:</strong> تأكد من صحة الاسم وعدم وجود أخطاء إملائية.</li>
+                    <li class="check"><strong>استخدم البحث في القناة قبل الطلب:</strong> قد تكون اللعبة متوفرة بالفعل.</li>
+                    <li class="check"><strong>لا تكرر طلبك بشكل مزعج:</strong> جميع الطلبات تُراجع وإذا كانت اللعبة متاحة سيتم نشرها.</li>
+                    <li class="check"><strong>كن صبورًا:</strong> بعض الألعاب تحتاج إلى وقت لرفعها أو إيجاد روابط مناسبة لها.</li>
+                    <li class="check"><strong>إذا لم يتم الرد على طلبك، فهذا يعني أن اللعبة غير متاحة حاليًا:</strong> وليس تجاهلًا لك.</li>
+                    <li class="check"><strong>لا تطلب ألعابًا محظورة أو ذات محتوى غير لائق:</strong> نحن لا ندعم هذا النوع من المحتوى.</li>
+                </ul>
+                <hr>
+                <p class="rocket"><strong>باتباعك لهذه القوانين، ستساعدنا في توفير بيئة منظمة وسلسة للجميع. شكرًا لتعاونكم!</strong></p>
+            </div>
+        </div>
+
+        <div class="lang-en">
+            <h1 class="page-title">📌 Important Instructions and Rules – Please Read Before Commenting or Requesting Games</h1>
+            <div class="content-section">
+                <p>We welcome all members to the channel and group, and we appreciate your participation and requests. However, to ensure an organized and beneficial environment for everyone, please adhere to the following rules when commenting or requesting games.</p>
+                <hr>
+                <h3>📝 First: Rules for Commenting on Posts</h3>
+                <ul>
+                    <li class="check"><strong>Constructive Comments Only:</strong> Whether it's support or criticism, it must be in a respectful and purposeful manner, away from personal attacks or mockery.</li>
+                    <li class="check"><strong>Stick to the Post's Topic:</strong> Any comment unrelated to the post's topic or not concerning the channel will be deleted without notice.</li>
+                    <li class="check"><strong>Pointing out mistakes is acceptable and welcome:</strong> But do so politely without belittling others' efforts.</li>
+                    <li class="check"><strong>Do not use inappropriate or problematic language:</strong> Offensive or aggressive comments may lead to the commenter being banned.</li>
+                    <li class="check"><strong>Do not repeat questions or requests in the comments:</strong> If your question is not answered, please wait or use the channel's search function.</li>
+                    <li class="check"><strong>Do not share external links or advertisements:</strong> Any comment containing links to other sites will be deleted immediately.</li>
+                </ul>
+                <hr>
+                <h3>🎮 Second: Rules for Requesting Games – Read Before You Request</h3>
+                <p class="important-note warning"><strong>Important Note:</strong> Before requesting any game, ensure it is available and possible on the PS4. Impossible requests will be completely ignored.</p>
+                <ul>
+                    <li class="cross"><strong>Requesting PS3 games is forbidden:</strong> There is no official or unofficial way to run or convert PS3 games on PS4.</li>
+                    <li class="cross"><strong>Requesting conversion of PS2 games to PS4 is forbidden:</strong> Not all games are convertible, and we only provide games that have been previously converted.</li>
+                    <li class="cross"><strong>Requesting games incompatible with hacked PS4 is forbidden:</strong> If the game has not been modified to work on a hacked PS4, it cannot be provided.</li>
+                    <li class="cross"><strong>Requesting games not officially released on PS4 is forbidden:</strong> If the game has not been released in PKG format, you will not find it available for download.</li>
+                    <li class="cross"><strong>Requesting games with all links down is forbidden:</strong> If there is no active download link available, we will not be able to re-upload the game.</li>
+                </ul>
+                <hr>
+                <h3>🔹 Third: How to Increase the Chances of Your Request Being Fulfilled?</h3>
+                <ul>
+                    <li class="check"><strong>Write the game's name accurately:</strong> Ensure the name is correct and free of spelling errors.</li>
+                    <li class="check"><strong>Use the channel's search function before requesting:</strong> The game might already be available.</li>
+                    <li class="check"><strong>Do not repeat your request annoyingly:</strong> All requests are reviewed, and if the game is available, it will be posted.</li>
+                    <li class="check"><strong>Be patient:</strong> Some games require time to be uploaded or to find suitable links for them.</li>
+                    <li class="check"><strong>If your request is not answered, it means the game is currently unavailable:</strong> It is not an act of ignoring you.</li>
+                    <li class="check"><strong>Do not request banned games or games with inappropriate content:</strong> We do not support this type of content.</li>
+                </ul>
+                <hr>
+                <p class="rocket"><strong>By following these rules, you will help us provide an organized and smooth environment for everyone. Thank you for your cooperation!</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="lang-ar">&copy; 2024 جميع الحقوق محفوظة لـ 4GAMER.</p>
+        <p class="lang-en">&copy; 2024 All rights reserved for 4GAMER.</p>
+    </footer>
+
+
+<script>
+  function toggleLanguage() {
+    const html = document.documentElement;
+    const currentLang = html.lang;
+    const langToggleBtn = document.querySelector('.lang-toggle');
+
+    const elementsAr = document.querySelectorAll('.lang-ar');
+    const elementsEn = document.querySelectorAll('.lang-en');
+
+    if (currentLang === 'ar') {
+      html.lang = 'en';
+      html.dir = 'ltr';
+      langToggleBtn.textContent = 'العربية';
+      elementsAr.forEach(el => el.style.display = 'none');
+      elementsEn.forEach(el => el.style.display = 'block');
+      document.title = '4GAMER - Request Rules';
+    } else {
+      html.lang = 'ar';
+      html.dir = 'rtl';
+      langToggleBtn.textContent = 'English';
+      elementsAr.forEach(el => el.style.display = 'block');
+      elementsEn.forEach(el => el.style.display = 'none');
+      document.title = '4GAMER - شروط الطلب';
+    }
+  }
+</script>
